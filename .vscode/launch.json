@@ -1,0 +1,38 @@
+{
+    "type": "java",
+    "name": "Launch Yogi",
+    "request": "launch",
+    "mainClass": "com.dimata.service.general.appaccount.AppAccountApplication",
+    "projectName": "app-account",
+    "args": "--spring.profiles.active=yogi",
+
+    
+    
+    
+    
+
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch DemoDataUserApplication",
+            "request": "launch",
+            "mainClass": "com.dimata.demo.user.demo_data_user.DemoDataUserApplication",
+            "projectName": "demo_data_siswa"
+        },
+        {
+            "type": "java",
+            "name": "Launch DemoDataUserApplication",
+            "request": "launch",
+            "mainClass": "com.dimata.demo.user.demo_data_user.DemoDataUserApplication",
+            "projectName": "demo_data_user"
+        },
+        {
+            "type": "java",
+            "name": "Launch DemoDataSiswaApplication",
+            "request": "launch",
+            "mainClass": "com.dimata.demo.sekolah.demo_data_siswa.DemoDataSiswaApplication",
+            "projectName": "demo_data_siswa"
+        }
+    ]
+
+}

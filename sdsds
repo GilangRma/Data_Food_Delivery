@@ -1,0 +1,43 @@
+[33mcommit aeb938502ab04f694bd22cb2591b9d5f70854511[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: GilangRamaWiarta <96400289+GilangRamaWiarta@users.noreply.github.com>
+Date:   Fri Dec 31 12:16:12 2021 +0800
+
+    Memperbaiki error
+
+[33mcommit c556ef2f26625e184bb3ae3f5aa5965144383a88[m
+Author: pius11 <96400519+pius11@users.noreply.github.com>
+Date:   Mon Dec 27 16:12:46 2021 +0800
+
+    data_sekolah
+    
+    sekolahcontrol.java
+    sekolahfrom.java
+    datasekolah.java
+    datasekolahAPI.java
+    datasekolahcrud.java
+    datasekolahDbhadler.java
+    datasekolahrepo.java
+
+[33mcommit 190b7f1fb10ebb3a95b536bf2f8eade9640afec0[m
+Author: s-wira <55016501+s-wira@users.noreply.github.com>
+Date:   Fri Dec 24 15:57:53 2021 +0800
+
+    Fix bug
+
+[33mcommit f095b9674c5fc2143032cce805705672fdf893e7[m
+Author: s-wira <55016501+s-wira@users.noreply.github.com>
+Date:   Fri Dec 24 15:02:08 2021 +0800
+
+    API Data Siswa Done
+
+[33mcommit 8e39146d170807ab31cff11ee5f63ce951dd4a28[m
+Author: s-wira <55016501+s-wira@users.noreply.github.com>
+Date:   Fri Dec 24 13:04:27 2021 +0800
+
+    Update post data
+
+[33mcommit a990089b8e71213d488c165cd206f639bd1f23c5[m
+Author: s-wira <55016501+s-wira@users.noreply.github.com>
+Date:   Wed Dec 22 15:59:58 2021 +0800
+
+    first commit
