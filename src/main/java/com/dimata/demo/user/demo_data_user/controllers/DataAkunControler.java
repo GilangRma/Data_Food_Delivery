@@ -1,8 +1,10 @@
 package com.dimata.demo.user.demo_data_user.controllers;
 
 import com.dimata.demo.user.demo_data_user.core.search.CommonParam;
+import com.dimata.demo.user.demo_data_user.forms.ChekUserAndPasswordForm;
 import com.dimata.demo.user.demo_data_user.forms.DataAkunForm;
 import com.dimata.demo.user.demo_data_user.models.table.DataAkun;
+import com.dimata.demo.user.demo_data_user.models.table.DataUser;
 import com.dimata.demo.user.demo_data_user.services.api.DataAkunApi;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +50,11 @@ public class DataAkunControler {
     @PutMapping(path = BASE_URL + "/data_akun/{id_akun}")
     public Mono<DataAkun> maintainerUpdateDataAkun(@PathVariable("id_akun") long id_akun, @RequestBody DataAkunForm form) {
         return dataAkunApi.updateDataAkun(id_akun, form);
+    }
+
+    @PostMapping(path = BASE_URL + "/user/login")
+    public Mono<DataUser> maintainerLoginUser(@RequestBody ChekUserAndPasswordForm form) {
+        return dataAkunApi.checkAvailebleData(form)
+            .flatMap(f -> dataAkunApi.getUserDetail(f.getEmail()));
     }
 }

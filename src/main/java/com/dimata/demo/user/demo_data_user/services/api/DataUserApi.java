@@ -64,5 +64,16 @@ public class DataUserApi {
             .flatMap(dataUserCrude::updateRecord);
     }
 
+    public Mono<DataUser> getDataUserByEmail(String email) {
+        var sql = SelectQBuilder.emptyBuilder(DataUser.TABLE_NAME)
+            .addWhere(WhereQuery.when(DataUser.EMAIL_COL).is(email))
+            .build();
+        System.out.println(sql);
+        return template.getDatabaseClient()
+            .sql(sql)
+            .map(DataUser::fromRow)
+            .one();
+    }
+
    
 }

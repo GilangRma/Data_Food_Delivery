@@ -59,6 +59,7 @@ public class DataUser implements UpdateAvailable<DataUser>, Persistable<Long>{
                 .email(Objects.requireNonNull(email, "Email diperlukan"))
                 .nama(Objects.requireNonNull(nama, "Nama tidak boleh kosong"))
                 .alamat(Objects.requireNonNull(alamat, "Alamat tidak boleh kosong"))
+                .photo_profil(Objects.requireNonNull(photo_profil, "Photo Profil tidak boleh kosong"))
                 .phone_num(Objects.requireNonNull(phone_num, "Phone_num tidak boleh kosong"));
         }
 

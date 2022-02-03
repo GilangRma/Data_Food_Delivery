@@ -1,11 +1,14 @@
 package com.dimata.demo.user.demo_data_user.services.api;
 
 
+import com.dimata.demo.user.demo_data_user.core.exception.DataNotFoundException;
 import com.dimata.demo.user.demo_data_user.core.search.CommonParam;
 import com.dimata.demo.user.demo_data_user.core.search.SelectQBuilder;
 import com.dimata.demo.user.demo_data_user.core.search.WhereQuery;
+import com.dimata.demo.user.demo_data_user.forms.ChekUserAndPasswordForm;
 import com.dimata.demo.user.demo_data_user.forms.DataAkunForm;
 import com.dimata.demo.user.demo_data_user.models.table.DataAkun;
+import com.dimata.demo.user.demo_data_user.models.table.DataUser;
 import com.dimata.demo.user.demo_data_user.services.crude.DataAkunCrude;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +25,10 @@ public class DataAkunApi {
     @Autowired
     private DataAkunCrude dataAkunCrude;
     @Autowired
+    private DataUserApi dataUserApi;
+    @Autowired
 	private R2dbcEntityTemplate template;
+
 
     public Mono<DataAkun> createDataAkun(DataAkunForm form) {
         return Mono.just(form)
@@ -65,6 +71,24 @@ public class DataAkunApi {
             })
             .flatMap(dataAkunCrude::updateRecord);
     }
+
+    public Mono<DataAkun> checkAvailebleData(ChekUserAndPasswordForm form) {
+        var sql = SelectQBuilder.emptyBuilder(DataAkun.TABLE_NAME)
+                .addWhere(WhereQuery.when(DataAkun.EMAIL_COL).is(form.getEmail())
+                .and(WhereQuery.when(DataAkun.PASSWORD_COL).is(form.getPassword())))
+            .build();
+        return template.getDatabaseClient()
+            .sql(sql)
+            .map(DataAkun::fromRow)
+            .one()
+            .switchIfEmpty(Mono.error(new DataNotFoundException("User dan Password salah!!")));
+
+    }
+
+    public Mono<DataUser> getUserDetail(String email) {
+        return dataUserApi.getDataUserByEmail(email);
+    }
+
 
       
 }
