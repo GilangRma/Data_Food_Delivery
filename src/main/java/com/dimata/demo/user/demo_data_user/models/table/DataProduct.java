@@ -1,9 +1,7 @@
 package com.dimata.demo.user.demo_data_user.models.table;
 
 import static com.dimata.demo.user.demo_data_user.core.util.ManipulateUtil.changeItOrNot;
-
 import java.util.Objects;
-
 import com.dimata.demo.user.demo_data_user.core.api.UpdateAvailable;
 import com.dimata.demo.user.demo_data_user.core.util.GenerateUtil;
 import com.dimata.demo.user.demo_data_user.core.util.ManipulateUtil;
