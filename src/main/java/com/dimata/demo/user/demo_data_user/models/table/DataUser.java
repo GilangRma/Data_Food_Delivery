@@ -32,7 +32,7 @@ import lombok.experimental.Accessors;
 
 public class DataUser implements UpdateAvailable<DataUser>, Persistable<Long>{
     
-    public static final String TABLE_NAME = "data_User";
+    public static final String TABLE_NAME = "data_user";
     public static final String ID_COL = "id_user";
     public static final String EMAIL_COL = "email";
     public static final String NAMA_COL = "nama";

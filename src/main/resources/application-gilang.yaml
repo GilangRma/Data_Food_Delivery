@@ -1,8 +1,8 @@
 spring:
   r2dbc:
-    url: r2dbc:mysql://localhost:3306/food_delivery
-    username: admin
-    password: sayaganteng
+    url: r2dbc:mysql://localhost:3306/db_food_delivery
+    username: root
+    password: 
   main:
     web-application-type: reactive
   application:
